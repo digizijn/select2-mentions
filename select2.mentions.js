@@ -1,3 +1,8 @@
+/*
+* select2-mentions
+* Version 1.0.0
+* Written by: Kyle Gibson (PolicyStat)
+*/
 (function ($) {
     $.fn.extend({
         setSelection: function(selectionStart, selectionEnd) {
