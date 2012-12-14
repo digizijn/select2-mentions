@@ -63,11 +63,11 @@
             });
         },
         mentions: function(options) {
-            var select2Input = $('.select2-input', this.select2('container'));
-
+            var self = this;
+            var select2Input = $('.select2-input', self.select2('container'));
             var sendKeys = false;
 
-            this.on('close', function(e) {
+            self.on('close', function(e) {
                 if (sendKeys) {
                     window.setTimeout(function() {
                         var position = options.input.data('cursor-position');
@@ -76,7 +76,7 @@
                 }
             });
 
-            this.on('change', function(e) {
+            self.on('change', function(e) {
                 if (sendKeys) {
                     sendKeys = false;
                     if ('added' in e) {
@@ -98,7 +98,7 @@
                 }
                 if (sendKeys) {
                     window.setTimeout(function() {
-                        $(selector).select2('focus');
+                        self.select2('focus');
                         select2Input.val(typedValue);
                     }, 100);
                 }
@@ -106,6 +106,8 @@
                     sendKeys = true;
                 }
             });
+
+            return this;
         }
     });
 })(jQuery);
