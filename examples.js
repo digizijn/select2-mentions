@@ -7,7 +7,10 @@ $(function() {
         $(selector).mentions({
             input: $('#example1 .demo textarea.mentions'),
             triggerKey: /@/,
-            stopKey: /^[a-z0-9]+$/i
+            stopKey: /^[a-z0-9]+$/i,
+            formatAdded: function(item) {
+                return item.text + ' ';
+            }
         });
     }
 
