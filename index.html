@@ -9,14 +9,6 @@
     <link rel="stylesheet" href="stylesheets/pygment_trac.css">
     <link rel="stylesheet" href="select2-3.2/select2.css">
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
-    <!--[if lt IE 9]>
-    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
-    <script src='https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js' type='text/javascript'></script>
-    <script src="https://raw.github.com/mathiasbynens/jquery-placeholder/master/jquery.placeholder.min.js"></script>
-    <script src='select2-3.2/select2.js' type='text/javascript'></script>
-    <script src="https://raw.github.com/kylegibson/select2-mentions/3e5d60b9a7e904e824ade43cc06c3d17000c77e9/select2-mentions.js"></script>
-    <script src="examples.js"></script>
   </head>
   <body>
     <div class="wrapper">
@@ -85,5 +77,18 @@ $(selector).mentions({
       </footer>
     </div>
     <script src="javascripts/scale.fix.js"></script>
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <script src='https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js' type='text/javascript'></script>
+    <script src="https://raw.github.com/mathiasbynens/jquery-placeholder/master/jquery.placeholder.min.js"></script>
+    <script src='select2-3.2/select2.js' type='text/javascript'></script>
+    <script src="https://raw.github.com/kylegibson/select2-mentions/3e5d60b9a7e904e824ade43cc06c3d17000c77e9/select2-mentions.js"></script>
+    <script src="examples.js"></script>
+    <script>
+        $(function() {
+            $('input, textarea').placeholder();
+        });
+    </script>
   </body>
 </html>
