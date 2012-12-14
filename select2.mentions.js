@@ -67,6 +67,14 @@
             var select2Input = $('.select2-input', self.select2('container'));
             var sendKeys = false;
 
+            options = $.extend({}, {
+                triggerKey: /@/,
+                stopKey: /^[a-z0-9]+$/i,
+                formatAdded: function(item) {
+                    return item.text + ' ';
+                }
+            }, options);
+
             self.on('close', function(e) {
                 if (sendKeys) {
                     window.setTimeout(function() {
@@ -81,7 +89,7 @@
                     sendKeys = false;
                     if ('added' in e) {
                         var position = options.input.data('cursor-position');
-                        var text = e.added.text + ' ';
+                        var text = options.formatAdded(e.added);
                         options.input.setSelection(position, position + 1);
                         options.input.insertTextAtCursorPosition(text);
                         options.input.data('cursor-position', position + text.length);
